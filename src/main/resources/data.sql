@@ -14,12 +14,16 @@ VALUES ('jd001', 1, 'Jack Daniels', 29.99, 39.99, 10, 3, 15, 0, '', '');
 INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
 VALUES ('hn001', 1, 'Hennessy', 69.99, 99.99, 5, 4, 15, 0, '', '');
 INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
-VALUES ('rb001', 2, 'Root Beer', 2.99, 5.99, 15, 1, 20, 0, '', '');
+VALUES ('rb001', 2, 'Root Beer', 2.99, 5.99, 15, 3, 20, 0, '', '');
 INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
-VALUES ('up001', 2, '7UP', 2.99, 5.99, 20, 1, 20, 0, '', '');
+VALUES ('up001', 2, '7UP', 2.99, 5.99, 20, 4, 20, 0, '', '');
 INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
-VALUES ('pp001', 2, 'Pepsi', 1.99, 4.99, 25, 1, 30, 0, '', '');
+VALUES ('pp001', 2, 'Pepsi', 1.99, 4.99, 25, 5, 30, 0, '', '');
 INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
 VALUES ('hb001', 3, 'Coffee Maker', 119.99, 159.99, 5, 16, 3, 0, '', '');
 INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
 VALUES ('bs001', 4, 'Vacuum', 139.99, 209.99, 5, 20, 5, 0, '', '');
+INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
+VALUES ('bs002', 4, 'Vacuum Pro', 159.99, 259.99, 10, 30, 6, 0, '', '');
+INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
+VALUES ('ds001', 4, 'Dyson', 349.99, 459.99, 10, 40, 3, 5, '', '');
