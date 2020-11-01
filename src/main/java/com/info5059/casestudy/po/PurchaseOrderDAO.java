@@ -31,4 +31,13 @@ public class PurchaseOrderDAO {
         return realPurchaseOrder.getId();
     }
 
+    public PurchaseOrder findOne(Long id) {
+        PurchaseOrder purchaseOrder = entityManager.find(PurchaseOrder.class, id);
+        if (purchaseOrder == null) {
+            throw new EntityNotFoundException("Can't find purchaseorder for ID "
+                    + id);
+        }
+        return purchaseOrder;
+    }
+
 }
