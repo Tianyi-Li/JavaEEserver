@@ -1,5 +1,8 @@
 package com.info5059.casestudy.po;
 
+import com.info5059.casestudy.product.Product;
+import com.info5059.casestudy.product.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import javax.persistence.EntityManager;
@@ -7,10 +10,14 @@ import javax.persistence.EntityNotFoundException;
 import javax.persistence.PersistenceContext;
 import java.util.Date;
 
+
 @Component
 public class PurchaseOrderDAO {
     @PersistenceContext
     private EntityManager entityManager;
+
+    @Autowired
+    private ProductRepository productRepository;
 
     @Transactional
     public Long create(PurchaseOrder clientrep) {
@@ -20,6 +27,8 @@ public class PurchaseOrderDAO {
         realPurchaseOrder.setAmount(clientrep.getAmount());
         entityManager.persist(realPurchaseOrder);
 
+        Iterable<Product> products = productRepository.findAll();
+
         for(PurchaseOrderLineItem item:clientrep.getItems()) {
             PurchaseOrderLineItem realItem = new PurchaseOrderLineItem();
             realItem.setPoid(realPurchaseOrder.getId());
@@ -27,6 +36,10 @@ public class PurchaseOrderDAO {
             realItem.setPrice(item.getPrice());
             realItem.setQty(item.getQty());
             entityManager.persist(realItem);
+            // Update product qoo
+            Product pp = productRepository.findById(item.getProductid()).get();
+            pp.setQoo(item.getQty());
+            productRepository.save(pp);
         }
         return realPurchaseOrder.getId();
     }

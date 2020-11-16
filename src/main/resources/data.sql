@@ -26,4 +26,4 @@ VALUES ('bs001', 4, 'Vacuum', 139.99, 209.99, 5, 20, 5, 0, '', '');
 INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
 VALUES ('bs002', 4, 'Vacuum Pro', 159.99, 259.99, 10, 30, 6, 0, '', '');
 INSERT INTO Product (ID, VendorId, Name, CostPrice, MSRP, ROP, EOQ, QOH, QOO, QRCode, QRCodeTxt)
-VALUES ('ds001', 4, 'Dyson', 349.99, 459.99, 10, 40, 3, 5, '', '');
+VALUES ('ds001', 4, 'Dyson', 349.99, 459.99, 10, 40, 3, 0, '', '');

@@ -38,7 +38,7 @@ import java.util.logging.Logger;
  * PurchaseOrderPDFGenerator - a class for creating dynamic prudct Purchase Order output in PDF
  * format using the iText 7 library
  *
- * @author Evan
+ * @author Tianyi Li
  */
 public abstract class PurchaseOrderPDFGenerator extends AbstractPdfView {
     public static ByteArrayInputStream generatePurchaseOrder(String poid,
@@ -242,8 +242,6 @@ public abstract class PurchaseOrderPDFGenerator extends AbstractPdfView {
                 poTable.addCell(cell);
                 document.add(poTable);
             }
-
-
 
 
             document.add(new Paragraph("\n\n"));
