@@ -53,4 +53,10 @@ public class PurchaseOrderDAO {
         return purchaseOrder;
     }
 
+    public Iterable<PurchaseOrder> findByVendor(Long vendorId) {
+        return entityManager.createQuery("select r from PurchaseOrder r where r.vendorid = :id")
+                .setParameter("id", vendorId)
+                .getResultList();
+    }
+
 }

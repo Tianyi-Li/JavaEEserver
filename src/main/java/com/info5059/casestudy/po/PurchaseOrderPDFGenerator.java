@@ -28,6 +28,7 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 import java.net.URL;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 import java.util.Optional;
@@ -242,10 +243,11 @@ public abstract class PurchaseOrderPDFGenerator extends AbstractPdfView {
                 poTable.addCell(cell);
                 document.add(poTable);
             }
-
+            String pattern = "MM-dd-yyyy HH:mm.ss";
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
 
             document.add(new Paragraph("\n\n"));
-            document.add(new Paragraph(String.valueOf(new Date()))
+            document.add(new Paragraph(String.valueOf(simpleDateFormat.format(purchaseOrder.getPodate())))
                     .setTextAlignment(TextAlignment.CENTER));
             document.close();
 
